@@ -22,9 +22,9 @@ if (editId) {
 
 }
 
-if(todo == ""){ 
+if(todo === ""){ 
   alert("emty")
-}{
+}else{
   setTodos([{id:`${todo}-${Date.now()}`,todo},...todos])
   setTodo("")
 }};
@@ -46,7 +46,7 @@ setEditId(id);
 
   <form className='todoform' onSubmit={handleSubmit}>
     <input type='text' value={todo} onChange={(e)=>setTodo(e.target.value)}/>
-    <button type='submit'>{ editId ? "Edit" : "Go"} </button>
+    <button type='submit'>{ editId ? "Edit" : "submit"} </button>
   </form>
   <ul className='alltodos'>
     { todos.map((t)=>(
